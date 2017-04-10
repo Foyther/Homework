@@ -20,8 +20,8 @@ public class Settings {
     private int ballDeltaX = -1;
     private int ballDeltaY = 3;
 
-    SettingsClient first;
-    SettingsClient second;
+    private SettingsClient first;
+    private SettingsClient second;
 
     private int paddleSpeed = 5;
 

@@ -52,6 +52,7 @@ public class Client extends JPanel implements KeyListener, ActionListener {
 
 
     public static void main(String[] args) {
+//        javax.swing.SwingUtilities.invokeLater(Client::draw);
 
         try {
 
@@ -68,20 +69,21 @@ public class Client extends JPanel implements KeyListener, ActionListener {
             if(readSettClient instanceof SettingsClient){
                 clientDate = (SettingsClient) readSettClient;
             }
-            javax.swing.SwingUtilities.invokeLater(Client::draw);
 
 
-//            Thread thread = new Thread(new Runnable() {
-//                @Override
-//                public void run() {
-//                    while(true){
-//                        if(isReady()) {
-//                            draw();
-//                        }
-//                    }
-//                }
-//            });
-//            thread.start();
+
+            Thread thread = new Thread(new Runnable() {
+                @Override
+                public void run() {
+                    while(true){
+                        if(isReady()) {
+                            draw();
+                            break;
+                        }
+                    }
+                }
+            });
+            thread.start();
 
 
 
