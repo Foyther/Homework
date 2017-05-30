@@ -25,15 +25,6 @@ public class WebConfig extends WebMvcConfigurerAdapter {
     return resolver;
   }
 
-  @Bean
-  public MessageSource messageSource() {
-    ReloadableResourceBundleMessageSource res = new ReloadableResourceBundleMessageSource();
-    res.setBasenames("/WEB-INF/i18n/registration");
-    res.setCacheSeconds(0);
-    res.setDefaultEncoding("UTF-8");
-    res.setUseCodeAsDefaultMessage(false);
-    return res;
-  }
 
   @Override
   public void addViewControllers(ViewControllerRegistry registry) {
